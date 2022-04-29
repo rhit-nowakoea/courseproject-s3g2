@@ -1,68 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rose-Hulman Course Scheduler</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+  <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="styles/main.css">
+  <title>Scheduling Assistant</title>
 </head>
 
 <body>
-  <header>
-    <h1>Rose-Hulman Course Scheduler</h1>
-  </header>
+  <nav class="navbar navbar-dark fixed-top">
+    <a class="navbar-brand" href="#">Scheduling Assistant</a>
+  </nav>
+  <div id="loginPage" class="container page-container">
+    <h1 class="text-center display-4 my-5">Please sign in to use <br> Scheduling Assistant</h1>
+    <button id="rosefireButton" type="button" class="btn">Sign in with Rosefire</button>
+  </div>
 
-  <main class="subcontainer">
-
-    <div id="userSection">
-      <h3>Student Name</h3>
-    </div>
-
-    <div id="classSection" class="classcontainer">
-        <div class="termcontainer" id="term1">
-            <div class="class" id="class1">
-                <div class="className">"className"</div>
-                <div class="classDescription">"classDescription"</div>
-            </div>
-            <div class="class" id="class4">
-                <div class="className">"className"</div>
-                <div class="classDescription">"classDescription"</div>
-            </div>
-        </div>
-        <div class="termcontainer" id="term2">
-            <div class="class" id="class1">
-                <div class="className">"className"</div>
-                <div class="classDescription">"classDescription"</div>
-            </div>
-        </div>
-        <div class="termcontainer" id="term3">
-            <div class="class" id="class4">
-                <div class="className">"className"</div>
-                <div class="classDescription">"classDescription"</div>
-            </div>
-        </div>
-        <div class="termcontainer" id="term3">
-            <div class="class" id="class4">
-                <div class="className">"className"</div>
-                <div class="classDescription">"classDescription"</div>
-            </div>
-        </div>
-        <div class="termcontainer" id="term3">
-            <div class="class" id="class4">
-                <div class="className">"className"</div>
-                <div class="classDescription">"classDescription"</div>
-            </div>
-        </div>
-    </div>
-
-    
-  </main>
-  <footer>
-    <p>Created by Rose Students for Rose Students</p>
-  </footer>
-
-  
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/popper.js"></script>
+  <script src="scripts/bootstrap-material-design.js"></script>
+  <script>
+    $("body").bootstrapMaterialDesign();
+  </script>
+  <script src="/__/firebase/7.18.0/firebase-app.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
+  <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="scripts/rosefire.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 
