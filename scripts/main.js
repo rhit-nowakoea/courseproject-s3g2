@@ -1,3 +1,5 @@
+require(server.js);
+
 var rhit = rhit || {};
 
 rhit.FB_COLLECTION_USERS = "Users";

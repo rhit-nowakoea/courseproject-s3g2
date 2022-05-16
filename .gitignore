@@ -5440,3 +5440,8 @@ node_modules/xmlbuilder/lib/XMLTypeInfo.js
 node_modules/xmlbuilder/lib/XMLUserDataHandler.js
 node_modules/xmlbuilder/lib/XMLWriterBase.js
 node_modules/xmlbuilder/typings/index.d.ts
+node_modules/@azure/core-http/dist-esm/src/policies/msRestUserAgentPolicy.native.js
+node_modules/@azure/core-http/dist-esm/src/policies/msRestUserAgentPolicy.native.js.map
+node_modules/@azure/core-http/types/3.1/src/policies/msRestUserAgentPolicy.native.d.ts
+node_modules/@azure/core-http/types/latest/src/policies/msRestUserAgentPolicy.native.d.ts
+node_modules/@azure/core-http/types/latest/src/policies/msRestUserAgentPolicy.native.d.ts.map
