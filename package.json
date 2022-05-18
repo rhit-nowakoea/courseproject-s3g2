@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/rhit-nowakoea/courseproject-s3g2#readme",
   "dependencies": {
-    "tedious": "^14.5.0"
+    "fs": "0.0.1-security",
+    "tedious": "^14.5.0",
+    "xlsx": "^0.18.5"
   }
 }
