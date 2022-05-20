@@ -19,9 +19,8 @@ f = open('class.json')
 # a dictionary
 data = json.load(f)
   
-# Iterating through the json
-# list
-for i in data:
+# Iterating through the courses
+for i in data(0):
     cursor.execute('''
                 INSERT INTO Class (Credits, Prefix, Number, Name, OfferedQuarter)
                 VALUES (?,?,?,?,?)
