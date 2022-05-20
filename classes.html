@@ -1,4 +1,3 @@
-<!-- completed/in progress box with edit -->
 <!doctype html>
 <html lang="en">
 
@@ -7,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
   <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
   <link rel="stylesheet" href="styles/main.css">
   <title>Scheduling Assistant</title>
 </head>
 
 <body>
-
   <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
     <header class="bmd-layout-header">
       <div class="navbar navbar-dark bg-faded fixed-top justify-content-start">
@@ -29,7 +28,7 @@
       </header>
       <ul class="link-group">
         <div>
-          <a id="menuSignOut" class="link-group-item"><i class="material-icons">logout</i>Sign Out</a>
+          <a id="menuSignOut" class="link-group-item" href="/"><i class="material-icons">logout</i>Sign Out</a>
         </div>
         <div>
           <a class="link-group-item" href="/home.html"><i class="material-icons">home</i>Home</a>
@@ -38,7 +37,7 @@
           <a class="link-group-item" href="/degree.html"><i class="material-icons">note</i>Degree</a>
         </div>
         <div>
-          <a class="link-group-item" href="/cschedule.html"><i class="material-icons">calendar_today</i>Schedule</a>
+          <a class="link-group-item" href="/schedule.html"><i class="material-icons">calendar_today</i>Schedule</a>
         </div>
         <div>
           <a class="link-group-item" href="/classes.html"><i class="material-icons">web</i>Classes</a>
@@ -46,38 +45,40 @@
       </ul>
     </div>
     <main class="bmd-layout-content">
-      <div id="classesPage" class="container page-container">
-        <div id="userSection">
-          <h3>Student Name</h3>
-        </div>
-        <div>
-          <input type="text" class="searchBar" placeholder="Search">
-        </div>
-      
-            <div class="termcontainer" id="term1">
-                <div class="class" id="classes1">
-                    <div class="className">"Results"</div>
-                    <div class="classDescription">"search results"</div>
-                </div>
-                <hr>
-                <div class="class" id="classes2">
-                    <div class="className">"Current Classes"</div>
-                    <label class="classDescription">"List of Classes"</label>
-                </div>
-                <div class="class" id="classes3">
-                  <div class="className">"Completed Classes"</div>
-                  <label class="classDescription">"List of Classes"</label>
-              </div>
+      <div class="container-center-horizontal">
+        <div class="class screen">
+          <div class="flex-row">
+            <div class="header">
+              <h4><br />Classes</h4>
             </div>
-          </div>        
-            <div id="ClassesPageContainer">
+          </div>
+          <div class="classTakenContainer">
+            <div class="classTaken">
+              <h6>Completed Classes</h6>
             </div>
+            <div class="classTakenList">
+              <span>xxx<br /><br />xxx<br /><br />xxx<br /><br />xxx</span>
+            </div>
+          </div>
+          <div class="classListContainer">
+            <div class="classList">
+              <h6>List of Classes</h6>
+            </div>
+            <div>
+              <input type="text" class="searchBar" placeholder="Search">
+            </div>
+            <div class="classListList">
+              <span>xxx<br /><br />xxx<br /><br />xxx<br /><br />xxx</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 
   <!-- Fab -->
-  <button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addClassInfo">
-    <i class="material-icons">add</i>
+  <button id="fab" type="button" class="btn" data-toggle="modal" data-target="#addClassInfo">
+    Edit
   </button>
 
   <!-- Modals -->
@@ -88,18 +89,35 @@
         <div class="modal-header">
           <h5 class="modal-title">Add Degree</h5>
         </div>
-        <div class="modal-body">            
+        <div class="modal-body">
+
+          <div class="form-group bmd-form-group">
+            <label for="inputListSelect" class="bmd-label-floating">Class</label>
+            <select name="inputListSelect" id="inputListSelect">
+              <option>Choose where to edit:</option>
+              <option value="current">Current Classes</option>
+              <option value="completed">Completed Classes</option>
+            </select>
+          </div>
+
+          <div class="form-group bmd-form-group">
+            <label for="inputListSelect" class="bmd-label-floating">Class</label>
+            <select name="inputListSelect" id="inputListSelect">
+              <option>Choose how to edit:</option>
+              <option value="create">Create</option>
+              <option value="update">Update</option>
+              <option value="delete">Delete</option>
+            </select>
+          </div>
 
           <div class="form-group bmd-form-group">
             <label for="inputDegree" class="bmd-label-floating">Class</label>
-            
             <select name="inputDegree" id="inputDegree">
               <option>Choose a class:</option>
-              <option value="class">Class</option>
-              <option value="class">Class</option>
+              <option value="class1">Class</option>
+              <option value="class2">Class</option>
               <option value="other">other</option>
             </select>
-            
           </div>
 
         </div>
@@ -122,6 +140,8 @@
   <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
   <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
   <script src="/__/firebase/init.js"></script>
+  <script src="scripts/rosefire.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 
