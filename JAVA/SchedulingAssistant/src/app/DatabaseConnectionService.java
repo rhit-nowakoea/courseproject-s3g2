@@ -13,8 +13,6 @@ public class DatabaseConnectionService {
 
 	private String databaseName;
 	private String serverName;
-
-	public String currentUser;
 	
 	public DatabaseConnectionService(String serverName, String databaseName) {
 		//DO NOT CHANGE THIS METHOD
@@ -36,7 +34,6 @@ public class DatabaseConnectionService {
 			e.printStackTrace();
 			return false;
 		}
-		currentUser = user;
 		return true;
 	}
 	

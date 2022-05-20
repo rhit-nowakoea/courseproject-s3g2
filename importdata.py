@@ -20,12 +20,12 @@ f = open('class.json')
 data = json.load(f)
   
 # Iterating through the courses
-for i in data(0):
+for i in data[0]:
     cursor.execute('''
-                INSERT INTO Class (Credits, Prefix, Number, Name, OfferedQuarter)
-                VALUES (?,?,?,?,?)
+                INSERT INTO Class (Credits, Prefix, Number, Name)
+                VALUES (?,?,?,?)
                 ''',
-                int(float(i["Credits"])), i["Abbrv"], i["Number"], i["Name"], i["Offered"])
+                int(float(i["Credits"])), i["Abbrv"], i["Number"], i["Name"])
     cnxn.commit()
     print(i)
 print()
