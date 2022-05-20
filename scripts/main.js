@@ -34,236 +34,15 @@ rhit.SideNavController = class {
 
 rhit.HomePageController = class {
 	constructor() {
-		// document.querySelector("#submitAddQuote").onclick = (event) => {
-			// const quote = document.querySelector("#inputQuote").value;
-			// const movie = document.querySelector("#inputMovie").value;
-			// rhit.fbMovieQuotesManager.add(quote, movie);
-		// };
-		// document.querySelector("#submitAddQuote").addEventListener("click", (params) => {});
-		// $("#addQuoteDialog").on("show.bs.modal", (event) => {
-		// 	document.querySelector("#inputQuote").value = "";
-		// 	document.querySelector("#inputMovie").value = "";
-		// });
-		// $("#addQuoteDialog").on("shown.bs.modal", (event) => {
-		// 	document.querySelector("#inputQuote").focus();
-		// });
-		//Start Listening
-		// rhit.fbMovieQuotesManager.beginListening(this.updateList.bind(this));
-	// }
-
-	// _createCard(movieQuote) {
-	// 	return htmlToElement(`<div class="card">
-    //     <div class="card-body">
-    //       <h5 class="card-title">${movieQuote.quote}</h5>
-    //       <h6 class="card-subtitle mb-2 text-muted">${movieQuote.movie}</h6>
-    //     </div>
-    //   </div>`);
-	// }
-
-	// updateList() {
-	// 	if (rhit.fbMovieQuotesManager.uid) {
-	// 		if (!rhit.fbUserManager.isListening) {
-	// 			rhit.fbUserManager.beginListening(rhit.fbMovieQuotesManager.uid, () => {
-	// 				document.querySelector("#userSpecificHeading").innerHTML = `Showing quote made by ${rhit.fbUserManager.name}`;
-	// 			});				
-	// 		}
-	// 	}
-	// 	const newList = htmlToElement('<div id="quoteListContainer"></div>');
-	// 	for (let i = 0; i < rhit.fbMovieQuotesManager.length; i++) {
-	// 		const mq = rhit.fbMovieQuotesManager.getMovieQuoteAtIndex(i);
-	// 		const newCard = this._createCard(mq);
-
-	// 		newCard.onclick = (event) => {
-	// 			// console.log(`You clicked on ${mq.id}`);
-	// 			// rhit.storage.setMovieQuoteId(mq.id);
-
-	// 			window.location.href = `/moviequote.html?id=${mq.id}`;
-	// 		};
-
-	// 		newList.appendChild(newCard);
-
-	// 	}
-	// 	const oldList = document.querySelector("#quoteListContainer");
-	// 	oldList.removeAttribute("id");
-	// 	oldList.hidden = true;
-	// 	oldList.parentElement.appendChild(newList);
-
+		
 	}
 }
-
-// rhit.MovieQuote = class {
-// 	constructor(id, quote, movie) {
-// 		this.id = id;
-// 		this.quote = quote;
-// 		this.movie = movie;
-// 	}
-// }
-
-// rhit.FbMovieQuotesManager = class {
-// 	constructor(uid) {
-// 		this.uid = uid;
-// 		this._documentSnapshots = [];
-// 		this._ref = firebase.firestore().collection(rhit.FB_COLLECTION_MOVIEQUOTE);
-// 		this._unsubscribe = null;
-// 	}
-
-// 	add(quote, movie) {
-// 		this._ref.add({
-// 				[rhit.FB_KEY_QUOTE]: quote,
-// 				[rhit.FB_KEY_MOVIE]: movie,
-// 				[rhit.FB_KEY_AUTHOR]: rhit.fbAuthManager.uid,
-// 				[rhit.FB_KEY_LAST_TOUCHED]: firebase.firestore.Timestamp.now(),
-
-// 			})
-// 			.then(function (docRef) {
-// 				console.log("Document written with ID: ", docRef.id);
-// 			})
-// 			.catch(function (error) {
-// 				console.log("Error adding document: ", error);
-// 			});
-// 	}
-// 	beginListening(changeListener) {
-// 		let query = this._ref.orderBy(rhit.FB_KEY_LAST_TOUCHED, "desc").limit(50);
-// 		if (this.uid) {
-// 			console.log("uid = ", this.uid);
-// 			query = query.where(rhit.FB_KEY_AUTHOR, "==", this.uid);
-// 		}
-// 		this._unsubscribe = query.onSnapshot((querySnapshot) => {
-// 			this._documentSnapshots = querySnapshot.docs;
-// 			// querySnapshot.forEach((doc) => {
-// 			// 	console.log(doc.data());				
-// 			// });
-// 			if (changeListener) {
-// 				changeListener();
-// 			}
-// 		});
-// 	}
-// 	stopListening() {
-// 		this._unsubscribe();
-// 	}
-// 	// update(id, quote, movie) {	}
-// 	// delete(id) {	}
-// 	get length() {
-// 		return this._documentSnapshots.length;
-// 	}
-// 	getMovieQuoteAtIndex(index) {
-// 		const docSnapshot = this._documentSnapshots[index];
-// 		const mq = new rhit.MovieQuote(
-// 			docSnapshot.id,
-// 			docSnapshot.get(rhit.FB_KEY_QUOTE),
-// 			docSnapshot.get(rhit.FB_KEY_MOVIE),
-// 		);
-// 		return mq;
-// 	}
-// }
 
 rhit.DetailPageController = class {
 	constructor() {
-		// document.querySelector("#submitEditQuote").onclick = (event) => {
-		// 	const quote = document.querySelector("#inputQuote").value;
-		// 	const movie = document.querySelector("#inputMovie").value;
-		// 	rhit.fbSingleQuoteManager.update(quote, movie);
-		// };
-		// document.querySelector("#submitAddQuote").addEventListener("click", (params) => {});
-		// $("#editQuoteDialog").on("show.bs.modal", (event) => {
-		// 	document.querySelector("#inputQuote").value = rhit.fbSingleQuoteManager.quote;
-		// 	document.querySelector("#inputMovie").value = rhit.fbSingleQuoteManager.movie;
-		// });
-		// $("#editQuoteDialog").on("shown.bs.modal", (event) => {
-		// 	document.querySelector("#inputQuote").focus();
-		// });
-
-		// document.querySelector("#submitDeleteQuote").onclick = (event) => {
-		// 	rhit.fbSingleQuoteManager.delete().then(() => {
-		// 			console.log("Document successfully deleted!");
-		// 			window.location.href = "/home.html";
-		// 		})
-		// 		.catch(function (error) {
-		// 			console.log("Error removing document: ", error);
-		// 		});
-		// };
-		// document.querySelector("#menuSignOut").onclick = (event) => {
-		// 	rhit.fbAuthManager.signOut();
-		// };
-
-		// rhit.fbSingleQuoteManager.beginListening(this.updateView.bind(this));
+		
 	}
-	// updateView() {
-	// 	if (!rhit.fbUserManager.isListening) {
-	// 		rhit.fbUserManager.beginListening(rhit.fbSingleQuoteManager.author, this.updateAuthorBox.bind(this));
-	// 	}
-		// document.querySelector("#cardQuote").innerHTML = rhit.fbSingleQuoteManager.quote;
-		// document.querySelector("#cardQuote").innerHTML = rhit.fbSingleQuoteManager.quote;
-		// document.querySelector("#cardMovie").innerHTML = rhit.fbSingleQuoteManager.movie;
-		// if (rhit.fbSingleQuoteManager.author == rhit.fbAuthManager.uid) {
-		// 	document.querySelector("#menuEdit").style.display = "flex";
-		// 	document.querySelector("#menuDelete").style.display = "flex";
-		// }
-	// }
-	// updateAuthorBox() {
-	// 	if (rhit.fbUserManager.name) {
-	// 		document.querySelector("#authorName").innerHTML = rhit.fbUserManager.name;
-	// 	}
-	// 	document.querySelector("#authorBox").onclick = (event) => {
-	// 		// if (rhit.fbSingleQuoteManager.author == rhit.fbAuthManager.uid) {
-	// 		// 	window.location.href = "/profile.html";
-	// 		// } else {
-	// 		// 	window.location.href = `/home.html`;
-	// 		// 	// ?uid=${rhit.fbSingleQuoteManager.author}
-	// 		// }
-	// 	};
-	// }
-	 
 }
-
-// rhit.FbSingleQuoteManager = class {
-// 	constructor(movieQuoteId) {
-// 		this._documentSnapshot = {};
-// 		this._unsubscribe = null;
-// 		this._ref = firebase.firestore().collection(rhit.FB_COLLECTION_MOVIEQUOTE).doc(movieQuoteId);
-// 	}
-// 	beginListening(changeListener) {
-// 		this._unsubscribe = this._ref.onSnapshot((doc) => {
-// 			if (doc.exists) {
-// 				console.log("Document data:", doc.data());
-// 				this._documentSnapshot = doc;
-// 				changeListener();
-// 			} else {
-// 				console.log("No such document!");
-// 				// window.location.href = "/list.html";
-// 			}
-// 		});
-// 	}
-// 	stopListening() {
-// 		this._unsubscribe();
-// 	}
-// 	update(quote, movie) {
-// 		this._ref.update({
-// 				[rhit.FB_KEY_QUOTE]: quote,
-// 				[rhit.FB_KEY_MOVIE]: movie,
-// 				[rhit.FB_KEY_LAST_TOUCHED]: firebase.firestore.Timestamp.now(),
-// 			})
-// 			.then(() => {
-// 				console.log("Document successfully updated!");
-// 			})
-// 			.catch(function (error) {
-// 				console.log("Error updating document: ", error);
-// 			});
-// 	}
-// 	delete() {
-// 		return this._ref.delete();
-// 	}
-
-// 	get quote() {
-// 		return this._documentSnapshot.get(rhit.FB_KEY_QUOTE);
-// 	}
-// 	get movie() {
-// 		return this._documentSnapshot.get(rhit.FB_KEY_MOVIE);
-// 	}
-// 	get author() {
-// 		return this._documentSnapshot.get(rhit.FB_KEY_AUTHOR);
-// 	}
-// }
 
 rhit.LoginPageController = class {
 	constructor() {
@@ -274,8 +53,6 @@ rhit.LoginPageController = class {
 			window.location.href = "/home.html";
 				return;
 		}
-		// rhit.fbAuthManager.startFirebaseUI();
-
 	}
 }
 
@@ -300,15 +77,16 @@ rhit.FbAuthManager = class {
 			}
 			console.log("Rosefire success!", rfUser);
 			this._name = rfUser.name;
-			// firebase.auth().signInWithCustomToken(rfUser.token).catch((error) => {
-			// 	const errorCode = error.code;
-			// 	const errorMessage = error.message;
-			// 	if (errorCode === 'auth/invalid-custom-token') {
-			// 		alert('The token you provided is not valid')
-			// 	} else {
-			// 		console.error("Custom Auth error", errorCode, errorMessage);
-			// 	}
-			// });
+			console.log("Set name to ", this._name);
+			firebase.auth().signInWithCustomToken(rfUser.token).catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				if (errorCode === 'auth/invalid-custom-token') {
+					alert('The token you provided is not valid')
+				} else {
+					console.error("Custom Auth error", errorCode, errorMessage);
+				}
+			});
 		});
 
 	}
@@ -320,13 +98,8 @@ rhit.FbAuthManager = class {
 
 	// startFirebaseUI = function () {
 	// 	var uiConfig = {
-	// 		signInSuccessUrl: '/',
-	// 		signInOptions: [
-	// 			firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-	// 			firebase.auth.EmailAuthProvider.PROVIDER_ID,
-	// 			firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-	// 			firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-	// 		],
+	// 		signInSuccessUrl: '/home.html',
+	// 		signInOptions: [],
 	// 	};
 	// 	const ui = new firebaseui.auth.AuthUI(firebase.auth());
 	// 	ui.start('#firebaseui-auth-container', uiConfig);
@@ -340,25 +113,6 @@ rhit.FbAuthManager = class {
 	}
 	get name() {
 		return this._name || this._user.displayName;
-	}
-}
-
-rhit.ProfilePageController = class {
-	constructor() {
-		console.log("Created Profile page controller");
-
-		document.querySelector("#submitName").onclick = (event) => {
-			const name = document.querySelector("#inputName").value;
-			rhit.fbUserManager.updateName(name).then((params) => {
-				window.location.href = "/home.html";
-			});
-		}
-		rhit.fbUserManager.beginListening(rhit.fbAuthManager.uid, this.updateView.bind(this));
-	}
-	updateView() {
-		if (rhit.fbUserManager.name) {
-			document.querySelector("#inputName").value = rhit.fbUserManager.name;
-		}
 	}
 }
 
@@ -435,9 +189,6 @@ rhit.checkForRedirects = function () {
 	// if (!document.querySelector("#loginPage") && !rhit.fbAuthManager.isSignedIn) {
 	// 	window.location.href = "/";
 	// }
-	// if (document.querySelector("#loginPage")) {
-
-	// }
 };
 
 rhit.initializePage = function () {
@@ -446,18 +197,11 @@ rhit.initializePage = function () {
 	if (document.querySelector("#homePage")) {
 		console.log("You are on the home page.");
 		const uid = urlParams.get("uid");
-		// rhit.fbMovieQuotesManager = new rhit.FbMovieQuotesManager(uid);
 		new rhit.HomePageController();
 	}
 
 	if (document.querySelector("#detailPage")) {
 		console.log("You are on the detail page.");
-		// const movieQuoteId = urlParams.get("id");
-
-		// if (!movieQuoteId) {
-		// 	window.location.href = "/home.html";
-		// }
-		// rhit.fbSingleQuoteManager = new rhit.FbSingleQuoteManager(movieQuoteId);
 		new rhit.DetailPageController();
 	}
 
@@ -512,11 +256,16 @@ rhit.main = function () {
 	rhit.fbAuthManager = new rhit.FbAuthManager();
 	rhit.fbUserManager = new rhit.FbUserManager();
 	rhit.fbAuthManager.beginListening(() => {
+		if (rhit.fbAuthManager.isSignedIn) {
+            rhit.fbUserManager.beginListening(rhit.fbAuthManager.uid, () => {
+                console.log("User manager listening");
+            })
+        }
 		console.log("isSignedIn = ", rhit.fbAuthManager.isSignedIn);
 		rhit.createUserObjectIfNeeded().then((isUserNew) => {
 			console.log('isUserNew :>> ', isUserNew);
 			if (isUserNew) {
-				window.location.href = "/profile.html";
+				window.location.href = "/home.html";
 				return;
 			}
 			rhit.checkForRedirects();

@@ -11,6 +11,20 @@ body {
   margin-top: 75px;
 }
 
+#fab {
+  background-color: #800000;
+  top: 60px;
+  color: #FFFFFF;
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+}
+
+#fab:active {
+  opacity: 0.8;
+  transform: translateY(2px);
+}
+
 #rosefireButton {
   display: block;
   margin: 60px auto;
@@ -19,6 +33,32 @@ body {
   font-size: 1.1em;
   padding: 10px 30px;
   border-radius: 5px;
+}
+
+.bmd-layout-content {
+  height: 100vh;
+}
+
+.bmd-layout-drawer>header {
+  background-color: #800000;
+  color: white;
+}
+
+.bmd-layout-drawer>ul {
+  background-color: #DDDDDD;
+}
+
+.link-group-item {
+  cursor: pointer;
+  color: #800000;
+}
+
+.link-group-item :first-child {
+  margin-right: 0.75rem;
+}
+
+#menuSignOut {
+  color: #800000;
 }
 
 .screen a {
