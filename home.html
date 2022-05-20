@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
   <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+  <link rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
   <link rel="stylesheet" href="styles/main.css">
   <title>Scheduling Assistant</title>
 </head>
 
 <body>
-
   <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
     <header class="bmd-layout-header">
       <div class="navbar navbar-dark bg-faded fixed-top justify-content-start">
@@ -28,7 +28,7 @@
       </header>
       <ul class="link-group">
         <div>
-          <a id="menuSignOut" class="link-group-item"><i class="material-icons">logout</i>Sign Out</a>
+          <a id="menuSignOut" class="link-group-item" href="/"><i class="material-icons">logout</i>Sign Out</a>
         </div>
         <div>
           <a class="link-group-item" href="/home.html"><i class="material-icons">home</i>Home</a>
@@ -37,7 +37,7 @@
           <a class="link-group-item" href="/degree.html"><i class="material-icons">note</i>Degree</a>
         </div>
         <div>
-          <a class="link-group-item" href="/cschedule.html"><i class="material-icons">calendar_today</i>Schedule</a>
+          <a class="link-group-item" href="/schedule.html"><i class="material-icons">calendar_today</i>Schedule</a>
         </div>
         <div>
           <a class="link-group-item" href="/classes.html"><i class="material-icons">web</i>Classes</a>
@@ -46,38 +46,47 @@
     </div>
     <main class="bmd-layout-content">
       <div id="homePage" class="container page-container">
-        <div id="userSection">
-          <h3>Student Name</h3>
+        <div class="container-center-horizontal">
+          <div class="home screen">  
+            <div class="flex-row">
+              <div class="header"><h4><br />Hi, xxx!</h4></div>
+            </div>
+            <div class="homeContainer">
+              <div class="homeDegreeHeaderContainer">
+                <div class="homeDegreeHeader"><h6>Degree(s)</h6></div>
+                <div class="homeDegreeSubcontainer">
+                  <div class="homeDegreeProgress">
+                    <span>You are xxx% complete with your degree(s) xxx.</span>
+                  </div>
+                  <div class="homeDegreeProgreeCircle">
+                    <h1 class="percent"><span>100%</span></h1>
+                  </div>
+                </div>
+              </div>
+              <div class="homeScheduleHeaderContainer">
+                <div class="homeScheduleHeader"><h6>Schedule</h6></div>
+                <div class="homeClassList">
+                  <span>xxx<br /><br />xxx<br /><br />xxx<br /><br />xxx</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      
-            <div class="termcontainer" id="term1">
-                <div class="class" id="home1">
-                    <div class="className">"className"</div>
-                    <div class="classDescription">"classDescription"</div>
-                </div>
-                <hr>
-                <div class="class" id="home2">
-                    <div class="className">"className"</div>
-                    <div class="classDescription">"classDescription"</div>
-                </div>
-            </div>
-          </div>        
-            <div id="HomePageContainer">
-            </div>
+      </div>
     </main>
   </div>
 
   <script src="scripts/jquery.min.js"></script>
   <script src="scripts/popper.js"></script>
   <script src="scripts/bootstrap-material-design.js"></script>
-  <script>
-    $("body").bootstrapMaterialDesign();
-  </script>
+  <script>$("body").bootstrapMaterialDesign();</script>
   <script src="/__/firebase/7.18.0/firebase-app.js"></script>
   <script src="/__/firebase/7.18.0/firebase-analytics.js"></script>
   <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
   <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
   <script src="/__/firebase/init.js"></script>
+  <script src="scripts/rosefire.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 
