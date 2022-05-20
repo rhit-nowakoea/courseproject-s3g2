@@ -11,11 +11,13 @@ const sheets = file.SheetNames
   
 for(let i = 0; i < sheets.length; i++)
 {
+    subdata = []
    const temp = reader.utils.sheet_to_json(
         file.Sheets[file.SheetNames[i]])
    temp.forEach((res) => {
-      data.push(res)
+      subdata.push(res)
    })
+   data.push(subdata)
 }
   
 // // Printing data

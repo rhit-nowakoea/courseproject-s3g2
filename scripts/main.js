@@ -270,6 +270,10 @@ rhit.LoginPageController = class {
 		document.querySelector("#rosefireButton").onclick = (event) => {
 			rhit.fbAuthManager.signIn();
 		};
+		if(rhit.fbAuthManager.isSignedIn){
+			window.location.href = "/home.html";
+				return;
+		}
 		// rhit.fbAuthManager.startFirebaseUI();
 
 	}
