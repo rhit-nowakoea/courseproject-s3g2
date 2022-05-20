@@ -1,3 +1,8 @@
+// var sql = requrire('./server.js');
+$.getScript("././server.js", function() {
+	alert("Script loaded but not necessarily executed.");
+ });
+
 var rhit = rhit || {};
 
 rhit.FB_COLLECTION_USERS = "Users";
