@@ -1,7 +1,21 @@
 // var sql = requrire('./server.js');
-$.getScript("././server.js", function() {
-	alert("Script loaded but not necessarily executed.");
- });
+// $.getScript("././server.js", function() {
+// 	alert("Script loaded but not necessarily executed.");
+//  });
+var connection = new ActiveXObject("ADODB.Connection") ;
+
+var connectionstring="Data Source=titan.csse.rose-hulman.edu;Initial Catalog=<catalog>;User ID=SAAppAcc;Password=SAPassword123;Provider=SQLOLEDB";
+
+connection.Open(connectionstring);
+var rs = new ActiveXObject("ADODB.Recordset");
+
+rs.Open("SELECT * FROM Student", connection);
+rs.MoveFirst
+while(!rs.eof)
+{
+   document.write(rs.fields(1));
+   rs.movenext;
+}
 
 var rhit = rhit || {};
 
