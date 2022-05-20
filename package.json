@@ -4,7 +4,8 @@
   "description": "CSSE333 courseproject-s3g2",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,9 @@
   "homepage": "https://github.com/rhit-nowakoea/courseproject-s3g2#readme",
   "dependencies": {
     "fs": "0.0.1-security",
+    "require": "^2.4.20",
     "tedious": "^14.5.0",
     "xlsx": "^0.18.5"
-  }
+  },
+  "devDependencies": {}
 }

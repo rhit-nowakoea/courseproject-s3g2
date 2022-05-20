@@ -1,5 +1,3 @@
-require(server.js);
-
 var rhit = rhit || {};
 
 rhit.FB_COLLECTION_USERS = "Users";
@@ -38,8 +36,18 @@ rhit.HomePageController = class {
 	}
 }
 
-rhit.DetailPageController = class {
+rhit.DegreePageController = class {
 	constructor() {
+
+		document.querySelector("#degreeType").onclick = (event) => {
+			var degreeType = document.getElementById("degreeType").value;
+			console.log(degreeType);
+			if(degreeType == "Major"){
+				console.log("major selected")
+			} else if(degreeType == "Minor"){
+				console.log("minor selected");
+			}
+		}
 		
 	}
 }
@@ -200,18 +208,9 @@ rhit.initializePage = function () {
 		new rhit.HomePageController();
 	}
 
-	if (document.querySelector("#detailPage")) {
-		console.log("You are on the detail page.");
-		new rhit.DetailPageController();
-	}
-
-	if (document.querySelector("#loginPage")) {
-		console.log("You are on the login page.");
-		new rhit.LoginPageController();
-	}
-	if (document.querySelector("#profilePage")) {
-		console.log("You are on the profile page.");
-		new rhit.ProfilePageController();
+	if (document.querySelector("#degreePage")) {
+		console.log("You are on the degree page.");
+		new rhit.DegreePageController();
 	}
 };
 
