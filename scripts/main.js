@@ -493,6 +493,19 @@ rhit.createUserObjectIfNeeded = function () {
 	});
 };
 
+rhit.updateProgress = function() {
+	const numb = document.querySelector(".number");
+	let counter = 0;
+	setInterval(() => {
+  	if(counter == 100 ){
+    	clearInterval();
+  	}else{
+    	counter+=1;
+    	numb.textContent = counter + "%";
+  	}
+	}, 80);
+}
+
 /* Main */
 rhit.main = function () {
 	console.log("Ready");

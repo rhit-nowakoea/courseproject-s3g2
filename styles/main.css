@@ -11,42 +11,6 @@ body {
     margin-top: 75px;
 }
 
-#fab {
-    background-color: #800000;
-    bottom: 10px;
-    color: #FFFFFF;
-    position: fixed;
-    right: 10px;
-    z-index: 999;
-}
-
-#fab:active {
-    opacity: 0.8;
-    transform: translateY(2px);
-}
-
-.card {
-    margin: 10px 0;
-}
-
-#homePage .card-title,
-#homePage .card-subtitle {
-    white-space: nowrap;
-    overflow: hidden;
-    display: block;
-    text-overflow: ellipsis;
-}
-
-.dropdown-menu-right {
-    left: -128px;
-}
-
-#roseLogo {
-    max-width: 350px;
-    margin: 20px auto;
-    display: block;
-}
-
 #rosefireButton {
     display: block;
     margin: 60px auto;
@@ -57,81 +21,403 @@ body {
     border-radius: 5px;
 }
 
-.bmd-layout-content {
-    height: 100vh;
+.screen a {
+    display: contents;
+    text-decoration: none;
+}
+  
+.container-center-horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    pointer-events: none;
+    width: 100%;
+}
+  
+.container-center-horizontal > * {
+    flex-shrink: 0;
+    pointer-events: auto;
+}
+  
+* {
+    box-sizing: border-box;
 }
 
-.bmd-layout-drawer>header {
-    background-color: #800000;
-    color: white;
-}
-
-.bmd-layout-drawer>ul {
-    background-color: #DDDDDD;
-}
-
-.home-group-item :first-child {
-    margin-right: 0.75rem;
-}
-
-#menuEdit,
-#menuDelete {
-    display: none;
-}
-
-.home-group-item {
-    cursor: pointer;
-}
-
-#submitName {
-    background-color: #800000;
-    color: white;
-}
-
-#authorBox {
-    position: fixed;
-    bottom: 10px;
-    right: 20px;
-    z-index: 999;
- }
- 
- #detailPage #profilePhoto {
-    display: block;
-    max-width: 150px;
-    max-height: 200px;
- }
- 
- body {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
-      "header"
-      "main"
-      "footer";
-    min-height: 100vh;
-    margin: 0;
-}
-
-.term {
+.home {
+    align-items: center;
+    background-color: var(--alto);
     display: flex;
     flex-direction: column;
+    height: 1024px;
+    width: 1440px;
 }
 
-.class{
-    background-color: white;
-    padding: 3em;
-    margin: 1px;
+.header {
+    letter-spacing: 1.43px;
+    margin-left: 7px;
+    margin-top: 38px;
+    min-height: 48px;
+    text-align: left;
+    width: 243px;
+}
+
+.homeContainer {
+    align-items: flex-start;
+    align-self: center;
+    display: flex;
+    height: 720px;
+    margin-left: 4.0px;
+    margin-top: 30px;
+    min-width: 1350px;
+}
+
+.homeDegreeHeaderContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    padding: 17px 0px;
+    width: 641px;
+}
+
+.homeDegreeHeader {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 223px;
+}
+
+.homeDegreeSubcontainer {
+    align-self: left;
+    height: 607px;
+    margin-left: 40px;
+    margin-top: 5px;
+    position: relative;
+    width: 591px;
+}
+
+.homeDegreeProgress {
+    left: 0;
+    letter-spacing: 1.43px;
+    position: absolute;
+    top: 0;
+    width: 591px;
+    margin-left: 20px;
+}
+
+.homeDegreeProgreeCircle {
+    border-radius: 163px/161px;
+    height: 322px;
+    left: 235px;
+    position: absolute;
+    top: 225px;
+    width: 326px;
+}
+
+.homeScheduleHeaderContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-left: 58px;
+    height: 500px;
+    padding: 17px 0;
+    width: 651px;
+}
+
+.homeScheduleHeader {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 222px;
+}
+  
+.homeClassList {
+    align-self: left;
+    height: 607px;
+    margin-left: 40px;
+    margin-top: 5px;
+    position: relative;
+    width: 591px;
+}
+
+.schedule {
+    align-items: center;
+    background-color: var(--alto);
+    display: flex;
+    flex-direction: column;
+    height: 1024px;
+    width: 1440px;
+}
+
+.flex-row {
+    align-items: flex-end;
+    display: flex;
+    margin-right: 19.0px;
+    margin-top: 27px;
+    min-width: 1393px;
+}
+
+.scheduleCurrentContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+
+.scheduleCurrent {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+
+.scheduleCurrentClassList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+  
+.scheduleFutureContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+
+.scheduleFuture {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+
+.scheduleFutureClassList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+
+.schedulePreviousContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+
+.schedulePrevious {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+
+.schedulePreviousClassList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+
+.degree {
+    align-items: center;
+    background-color: var(--alto);
+    display: flex;
+    flex-direction: column;
+    height: 1024px;
+    width: 1440px;
+}
+
+.degreeMajorContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+
+.degreeMajors {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+  
+.degreeMajorList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+
+.degreeMinorContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+
+.degreeMinors {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+  
+.degreeMinorList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+
+.degreeCertificateContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+  
+.degreeCertificates {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+
+.degreeCertificateList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+
+.class {
+    align-items: center;
+    background-color: var(--alto);
+    display: flex;
+    flex-direction: column;
+    height: 1024px;
+    width: 1440px;
+}
+
+.classTakenContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+  
+.classTaken {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+
+.classTakenList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
+}
+
+.classListContainer {
+    align-items: flex-start;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    margin-right: 1.0px;
+    margin-top: 30px;
+    min-height: 160px;
+    padding: 17px 4px;
+    width: 1345px;
+}
+  
+.classList {
+    letter-spacing: 1.43px;
+    min-height: 48px;
+    text-align: left;
+    margin-left: 20px;
+    width: 263px;
+}
+
+.classListList {
+    text-align: left;
+    letter-spacing: 1.43px;
+    margin-left: 40px;
+    margin-top: 19px;
+    min-height: 57px;
+    width: 475px;
 }
 
 .circular{
     height:100px;
     width: 100px;
-    position: relative;  
-    border:solid white 1px;
-}
-
-.circular .inner{
+    position: relative;
+    transform:scale(2);
+  }
+  .circular .inner{
     position: absolute;
     z-index: 6;
     top: 50%;
@@ -139,11 +425,11 @@ body {
     height: 80px;
     width: 80px;
     margin: -40px 0 0 -40px;
-    background: white;
+    background: #DDDDDD;
     border-radius: 100%;
-}
-
-.circular .number{
+   
+  }
+  .circular .number{
     position: absolute;
     top:50%;
     left:50%;
@@ -151,28 +437,25 @@ body {
     z-index:10;
     font-size:18px;
     font-weight:500;
-    color:black;
-}
-
-.circular .bar{
+    color:#800000;
+  }
+  .circular .bar{
     position: absolute;
     height: 100%;
     width: 100%;
     background: white;
     -webkit-border-radius: 100%;
     clip: rect(0px, 100px, 100px, 50px);
-}
-
-.circle .bar .progress{
+  }
+  .circle .bar .progress{
     position: absolute;
     height: 100%;
     width: 100%;
     -webkit-border-radius: 100%;
     clip: rect(0px, 50px, 100px, 0px);
     background: #800000;
-}
-
-.circle .left .progress{
+  }
+  .circle .left .progress{
     z-index:1;
     animation: left 4s linear both;
   }
